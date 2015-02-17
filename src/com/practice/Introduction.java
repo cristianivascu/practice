@@ -1,5 +1,8 @@
 package com.practice;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by cristianivascu on 17/02/2015.
  */
@@ -12,7 +15,8 @@ public class Introduction {
         //printIsoscelesTriangle(5);
         //printDiamond(9);
         //printNameDiamond(4);
-        fizzBuzz();
+        //fizzBuzz();
+        System.out.println(generate(44));
     }
 
     public static void printStar(){
@@ -99,6 +103,22 @@ public class Introduction {
             System.out.println();
 
         }
+    }
+
+    public static List<Integer> generate(int n){
+        List<Integer> primeFactors = new ArrayList<Integer>();
+        for(int i = 2; i<=n/2; i++){
+            while(n%i == 0){
+                primeFactors.add(i);
+                n = n/i;
+            }
+        }
+
+        if (n != 1) {
+            primeFactors.add(n);
+        }
+
+        return primeFactors;
     }
 
 
