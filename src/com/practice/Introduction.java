@@ -10,8 +10,9 @@ public class Introduction {
         //printVerticalLine(3);
         //printRightTriangle(8);
         //printIsoscelesTriangle(5);
-        printDiamond(9);
-        printNameDiamond(4);
+        //printDiamond(9);
+        //printNameDiamond(4);
+        fizzBuzz();
     }
 
     public static void printStar(){
@@ -59,13 +60,15 @@ public class Introduction {
 
     public static void printIsoscelesTriangle(int maxHeight, int offset){
         for(int currentHeight=0; currentHeight<maxHeight; currentHeight++) {
-            printIsoscelesLine(maxHeight+offset, currentHeight);
+            printWhiteLine(offset);
+            printIsoscelesLine(maxHeight, currentHeight);
         }
     }
 
     public static void printReverseIsoscelesTriangle(int maxHeight, int offset){
         for(int currentHeight=maxHeight-1; currentHeight>=0; currentHeight--) {
-            printIsoscelesLine(maxHeight+offset, currentHeight);
+            printWhiteLine(offset);
+            printIsoscelesLine(maxHeight, currentHeight);
         }
     }
 
@@ -79,4 +82,24 @@ public class Introduction {
         System.out.println("Cristian");
         printReverseIsoscelesTriangle(length-1,1);
     }
+
+    public static void fizzBuzz(){
+        for (int i = 0; i<100; i++){
+            boolean printedString = false;
+            if((i+1)%3 == 0) {
+                System.out.print("Fizz");
+                printedString = true;
+            }
+            if((i+1)%5 == 0) {
+                System.out.print("Buzz");
+                printedString = true;
+            }
+            if(!printedString)
+                System.out.print(i+1);
+            System.out.println();
+
+        }
+    }
+
+
 }
